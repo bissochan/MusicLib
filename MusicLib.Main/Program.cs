@@ -17,22 +17,21 @@ class Program
 
         Parser.Default.ParseArguments<CommandOptions>(args).WithParsed(options =>
         {
-            if (options.setDownloadPath != null || config["DownloadDir"] == null)
+            if (options.SetDownloadPath != null || config["DownloadDir"] == null)
             {
-                config["DownloadDir"] = options.pathToDownload;
-                Console.WriteLine("download path changed to: " + options.pathToDownload);
+                config["DownloadDir"] = options.PathToDownload;
+                Console.WriteLine("download path changed to: " + options.PathToDownload);
             }
 
-            if (options.setRootPath != null || config["RootDir"] == null)
+            if (options.SetRootPath != null || config["RootDir"] == null)
             {
-                config["RootDir"] = options.pathToRoot;
-                Console.WriteLine("root path changed to: " + options.pathToRoot);
+                config["RootDir"] = options.PathToRoot;
+                Console.WriteLine("root path changed to: " + options.PathToRoot);
             }
 
-            string? pathToDownloadFolder = options.pathToDownload ?? config["DownloadDir"];
-            string? pathToRootFolder = options.pathToRoot ?? config["RootDir"];
-            bool flagSort = options.sortPaths;
-            bool flagPlaylist= options.playlistFlag;
+            string? pathToDownloadFolder = options.PathToDownload ?? config["DownloadDir"];
+            string? pathToRootFolder = options.PathToRoot ?? config["RootDir"];
+            
 
 
             if (args.Length == 0)
@@ -56,19 +55,19 @@ class Program
             ScriptManager sManager = new ScriptManager();
             sManager.RunSpotdl(url, pathToDownloadFolder);
 
-            if (!flagSort)
+            if (!options.SortPaths)
             {
                 return;
             }
             FileManager fManager = new FileManager(pathToRootFolder);
             List<SongData> songData = fManager.AddToLibrary(pathToDownloadFolder);
 
-            if (!flagPlaylist)
+            if (!options.PlaylistFlag)
             {
                 return;
             }
             PlaylistManager pManager = new PlaylistManager(pathToRootFolder);
-            pManager.CreatePlaylist(songData);
+            pManager.CreatePlaylistM3U(songData, options.PlaylistName);
 
         });
     }
