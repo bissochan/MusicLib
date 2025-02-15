@@ -8,13 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98a6b863-d2d3-4b15-8de0-54712916171d" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/MusicLib.Main/CommandOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicLib.Main/appsettings.json" afterDir="false" />
+    <list default="true" id="98a6b863-d2d3-4b15-8de0-54712916171d" name="Changes" comment="added config and path managment">
+      <change afterPath="$PROJECT_DIR$/MusicLib.File/MusicLib.File.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicLib.File/SongData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicLib.Playlist/MusicLib.Playlist.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicLib.Main/CommandOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Main/CommandOptions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicLib.Main/MusicLib.Main.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Main/MusicLib.Main.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicLib.Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Main/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicLib.Scripts/ScriptManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Scripts/ScriptManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicLib.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +42,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/MusicLib.Main/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MusicLib.File/FileManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MusicLib.Playlist/PlaylistManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -114,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739611589369</updated>
-      <workItem from="1739611591279" duration="8941000" />
+      <workItem from="1739611591279" duration="14917000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -124,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739616764025</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added config and path managment">
+      <option name="closed" value="true" />
+      <created>1739621543129</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739621543129</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +157,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="added config and path managment" />
+    <option name="LAST_COMMIT_MESSAGE" value="added config and path managment" />
   </component>
 </project>

@@ -8,6 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MusicLib.File\MusicLib.File.csproj" />
+      <ProjectReference Include="..\MusicLib.Playlist\MusicLib.Playlist.csproj" />
       <ProjectReference Include="..\MusicLib.Scripts\MusicLib.Scripts.csproj" />
     </ItemGroup>
 
