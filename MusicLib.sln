@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLib.Main", "MusicLib.Main\MusicLib.Main.csproj", "{F35C615D-C560-4E05-A05F-508BF932EECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLib.Scripts", "MusicLib.Scripts\MusicLib.Scripts.csproj", "{7B9A6781-BCA3-48F1-8282-14B771F11B20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F35C615D-C560-4E05-A05F-508BF932EECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35C615D-C560-4E05-A05F-508BF932EECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35C615D-C560-4E05-A05F-508BF932EECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35C615D-C560-4E05-A05F-508BF932EECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9A6781-BCA3-48F1-8282-14B771F11B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9A6781-BCA3-48F1-8282-14B771F11B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9A6781-BCA3-48F1-8282-14B771F11B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9A6781-BCA3-48F1-8282-14B771F11B20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
