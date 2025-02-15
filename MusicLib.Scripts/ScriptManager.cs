@@ -5,12 +5,12 @@ namespace MusicLib.Scripts;
 
 public interface IScriptManager
 {
-    void RunSpotdl(string urlPlaylist);
+    void RunSpotdl(string urlPlaylist, string pathToFolder);
 }
 
 public class ScriptManager : IScriptManager
 {
-    public void RunSpotdl(string urlPlaylist)
+    public void RunSpotdl(string urlPlaylist, string pathToFolder)
     {
         
         ProcessStartInfo psi = new ProcessStartInfo()
@@ -20,7 +20,8 @@ public class ScriptManager : IScriptManager
             RedirectStandardOutput = true,
             RedirectStandardError = true,
             CreateNoWindow = false,
-            UseShellExecute = false
+            UseShellExecute = false,
+            WorkingDirectory = pathToFolder
         };
         
         Console.WriteLine("Running Spotdl");
