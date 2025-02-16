@@ -8,10 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98a6b863-d2d3-4b15-8de0-54712916171d" name="Changes" comment="added file manager">
+    <list default="true" id="98a6b863-d2d3-4b15-8de0-54712916171d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MusicLib.File/FileHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicLib.File/FileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.File/FileManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicLib.Main/CommandOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Main/CommandOptions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicLib.Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Main/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicLib.Main/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Main/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicLib.Playlist/PlaylistManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MusicLib.Playlist/PlaylistManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +46,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MusicLib.File/FileManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MusicLib.Playlist/PlaylistManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -118,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739611589369</updated>
-      <workItem from="1739611591279" duration="16012000" />
+      <workItem from="1739611591279" duration="26081000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -152,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739637339016</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added palylist maker format .m3u">
+      <option name="closed" value="true" />
+      <created>1739638636636</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739638636636</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +188,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="added config and path managment" />
     <MESSAGE value="added file manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="added file manager" />
+    <MESSAGE value="added palylist maker format .m3u" />
+    <option name="LAST_COMMIT_MESSAGE" value="added palylist maker format .m3u" />
   </component>
 </project>
