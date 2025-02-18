@@ -1,8 +1,8 @@
 ﻿using CommandLine;
 using Microsoft.Extensions.Configuration;
-using MusicLib.Scripts;
 using MusicLib.FileM;
 using MusicLib.Playlist;
+using MusicLib.Scripts;
 using Newtonsoft.Json;
 
 namespace MusicLib.Main;
@@ -11,7 +11,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ;
+        
 
         Parser.Default.ParseArguments<CommandOptions>(args).WithParsed(options =>
         {
@@ -20,7 +20,7 @@ class Program
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            if (options.SetDownloadPath == true)
+            if (options.SetDownloadPath)
             {
                 if (options.PathToDownload != null)
                 {
@@ -32,9 +32,12 @@ class Program
                     }
 
                     var temp = JsonConvert.DeserializeObject<Configuration>(json);
-                    temp.DownloadDir = options.PathToDownload;
-                    string updatedJson = JsonConvert.SerializeObject(temp);
-                    Console.WriteLine("Download Directory updated to " + temp.DownloadDir);
+                    if (temp != null)
+                    {
+                        temp.DownloadDir = options.PathToDownload;
+                        var dummy = JsonConvert.SerializeObject(temp);
+                        Console.WriteLine("Download Directory updated to " + temp.DownloadDir);
+                    }
                 }
                 else
                 {
@@ -42,7 +45,7 @@ class Program
                 }
             }
 
-            if (options.SetRootPath == true)
+            if (options.SetRootPath)
             {
                 if (options.PathToRoot != null)
                 {
@@ -54,9 +57,12 @@ class Program
                     }
 
                     var temp = JsonConvert.DeserializeObject<Configuration>(json);
-                    temp.RootDir = options.PathToRoot;
-                    string updaedJson = JsonConvert.SerializeObject(temp);
-                    Console.WriteLine("Root Directory updated to " + temp.RootDir);
+                    if (temp != null)
+                    {
+                        temp.RootDir = options.PathToRoot;
+                        string dummy = JsonConvert.SerializeObject(temp);
+                        Console.WriteLine("Root Directory updated to " + temp.RootDir);
+                    }
                 }
                 else
                 {
@@ -67,7 +73,7 @@ class Program
             string? pathToDownloadFolder = options.PathToDownload ?? config["DownloadDir"];
             string? pathToRootFolder = options.PathToRoot ?? config["RootDir"];
             string url = options.Url;
-            string defaultDirectory = config["DefaultDir"];
+            string? defaultDirectory = config["DefaultDir"];
 
 
             if (pathToDownloadFolder == null)
@@ -92,23 +98,26 @@ class Program
                 return;
             }
 
-            FileManager fManager = new FileManager(pathToRootFolder, defaultDirectory);
-            List<SongData> songData = fManager.AddToLibrary(pathToDownloadFolder);
-
-            if (songData.Count == 0)
+            if (pathToRootFolder != null)
             {
-                return;
-            }
+                FileManager fManager = new FileManager(pathToRootFolder, defaultDirectory);
+                List<SongData> songData = fManager.AddToLibrary(pathToDownloadFolder);
 
-            PlaylistManager pManager = new PlaylistManager(pathToRootFolder, config["PlaylistDir"]);
-            if (options.XMLPlaylistFlag)
-            {
-                pManager.CreatePlaylistXML(songData, options.PlaylistName);
-            }
+                if (songData.Count == 0)
+                {
+                    return;
+                }
 
-            if (options.M3UPlaylistFlag)
-            {
-                pManager.CreatePlaylistM3U(songData, options.PlaylistName);
+                PlaylistManager pManager = new PlaylistManager(pathToRootFolder, config["PlaylistDir"]);
+                if (options.XMLPlaylistFlag)
+                {
+                    pManager.CreatePlaylistXml(songData, options.PlaylistName);
+                }
+
+                if (options.M3UPlaylistFlag)
+                {
+                    pManager.CreatePlaylistM3U(songData, options.PlaylistName);
+                }
             }
 
 
