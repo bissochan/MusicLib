@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using MusicLib.Scripts;
 using MusicLib.FileM;
 using MusicLib.Playlist;
+using Newtonsoft.Json;
 
 namespace MusicLib.Main;
 
@@ -19,17 +20,49 @@ class Program
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            //if (options.SetDownloadPath != null || config["DownloadDir"] == null)
-            //{
-            //    config["DownloadDir"] = options.PathToDownload;
-            //    Console.WriteLine("download path changed to: " + options.PathToDownload);
-            //}
+            if (options.SetDownloadPath == true)
+            {
+                if (options.PathToDownload != null)
+                {
+                    string json = File.ReadAllText("appsettings.json");
+                    if (!string.IsNullOrEmpty(json))
+                    {
+                        Console.WriteLine("ERROR: config file is empty");
+                        return;
+                    }
 
-            //if (options.SetRootPath != null || config["RootDir"] == null)
-            //{
-            //    config["RootDir"] = options.PathToRoot;
-            //    Console.WriteLine("root path changed to: " + options.PathToRoot);
-            //}
+                    var temp = JsonConvert.DeserializeObject<Configuration>(json);
+                    temp.DownloadDir = options.PathToDownload;
+                    string updatedJson = JsonConvert.SerializeObject(temp);
+                    Console.WriteLine("Download Directory updated to " + temp.DownloadDir);
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: path to download not provided, use --download-path to provide one");
+                }
+            }
+
+            if (options.SetRootPath == true)
+            {
+                if (options.PathToRoot != null)
+                {
+                    string json = File.ReadAllText("appsettings.json");
+                    if (!string.IsNullOrEmpty(json))
+                    {
+                        Console.WriteLine("ERROR: config file is empty");
+                        return;
+                    }
+
+                    var temp = JsonConvert.DeserializeObject<Configuration>(json);
+                    temp.RootDir = options.PathToRoot;
+                    string updaedJson = JsonConvert.SerializeObject(temp);
+                    Console.WriteLine("Root Directory updated to " + temp.RootDir);
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: path to root not provided, use --root-path to provide one");
+                }
+            }
 
             string? pathToDownloadFolder = options.PathToDownload ?? config["DownloadDir"];
             string? pathToRootFolder = options.PathToRoot ?? config["RootDir"];
@@ -70,7 +103,6 @@ class Program
             PlaylistManager pManager = new PlaylistManager(pathToRootFolder, config["PlaylistDir"]);
             if (options.XMLPlaylistFlag)
             {
-                
                 pManager.CreatePlaylistXML(songData, options.PlaylistName);
             }
 
